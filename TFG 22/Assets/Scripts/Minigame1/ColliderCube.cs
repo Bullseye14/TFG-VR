@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class ColliderCube : MonoBehaviour
 {
-    public GameObject digit; 
-
     public List<GameObject> numbers;
 
     public int number = -1;
@@ -14,14 +12,25 @@ public class ColliderCube : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.tag == "GreenBall" && !numbered)
+        if (collision.collider.tag == "GreenBall")
         {
-            digit = Instantiate(numbers[GetValue(collision.collider.name)], digit.transform);
+            // If the space contains a number, remove the number
+            if (numbered)
+            {
+                foreach (Transform child in transform)
+                {
+                    GameObject.Destroy(child.gameObject);
+                }
+            }
 
-            numbered = true;
+            // If it's the first hit, set numbered to true
+            else
+                numbered = true;
 
-            collision.collider.gameObject.SetActive(false);
+            // Instantiate the new number
+            Instantiate(numbers[GetValue(collision.collider.name)], this.transform);
         }
+
     }
 
     private int GetValue(string value)

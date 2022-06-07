@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class OperationResult : MonoBehaviour
 {
+    public int operationType;
+
     public int operationResult = 0;
 
     public List<GameObject> numbersGO;
@@ -13,7 +15,23 @@ public class OperationResult : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        operationResult = Random.Range(0, 90);
+        // Minimum 0+0+0 = 0, Maximum 9+9+9 = 27 
+        if(operationType == 1)
+        {
+            operationResult = Random.Range(0, 27);
+        }
+
+        // Minimum 0*0+0 = 0, Maximum 9*9+9 = 90 
+        else if (operationType == 2)
+        {
+            operationResult = Random.Range(0, 90);
+        }
+
+        // Minimum 0*0-9 = -9 but negative numbers are not included, Maximum 9*9-0 = 81 
+        else
+        {
+            operationResult = Random.Range(0, 81);
+        }
 
         // Only 1 digit
         if (operationResult.ToString().Length == 1)
