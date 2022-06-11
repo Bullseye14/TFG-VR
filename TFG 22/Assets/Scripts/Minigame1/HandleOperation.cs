@@ -14,8 +14,6 @@ public class HandleOperation : MonoBehaviour
     public OperationResult result;
     public ColliderCube num1, num2, num3;
 
-    public int num1_int, num2_int, num3_int, num4_int;
-
     public List<Material> indicatorMat;
 
     private bool correct = false;
@@ -26,11 +24,6 @@ public class HandleOperation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        num1_int = num1.number;
-        num2_int = num2.number;
-        num3_int = num3.number;
-        num4_int = result.operationResult;
-
         // All three spaces are filled
         if (num1.numbered && num2.numbered && num3.numbered)
         {
