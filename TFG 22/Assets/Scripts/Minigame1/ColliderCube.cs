@@ -12,20 +12,18 @@ public class ColliderCube : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        // If the ball touches a collider of the operation
         if (collision.collider.tag == "GreenBall")
         {
-            // If the space contains a number, remove the number
-            if (numbered)
-            {
-                foreach (Transform child in transform)
-                {
-                    GameObject.Destroy(child.gameObject);
-                }
-            }
-
-            // If it's the first hit, set numbered to true
-            else
+            // If there was no number, set numbered to true
+            if (!numbered)
                 numbered = true;
+
+            // Remove the previous number
+            foreach (Transform child in transform)
+            {
+                GameObject.Destroy(child.gameObject);
+            }
 
             // Instantiate the new number
             Instantiate(numbers[GetValue(collision.collider.name)], this.transform);
@@ -33,6 +31,7 @@ public class ColliderCube : MonoBehaviour
 
     }
 
+    // Returns the value that the box has to take and change the number to that value
     private int GetValue(string value)
     {
         value = value.Replace("Ball", "");
