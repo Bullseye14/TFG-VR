@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.XR;
 using UnityEngine.SceneManagement;
 
-public class HandPresence : MonoBehaviour
+public class RightHandPresence : MonoBehaviour
 {
     private InputDevice targetDevice;
 
@@ -36,24 +36,14 @@ public class HandPresence : MonoBehaviour
         else
             sceneChanged = false;
 
-        // A de la mà dreta
-        //if (targetDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool primaryButtonValue) && primaryButtonValue)
-        //    Debug.Log("Pressing Primary Button");
-
-        //if (targetDevice.TryGetFeatureValue(CommonUsages.trigger, out float triggerValue) && triggerValue > 0.1f)
-        //    Debug.Log("Trigger pressed " + triggerValue);
-
-        //if (targetDevice.TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 primary2DAxisValue) && primary2DAxisValue != Vector2.zero)
-        //    Debug.Log("Primary Touchpad " + primary2DAxisValue);
-
-        // B de la mà dreta
+        // B de la mà dreta per reiniciar l'escena
         if (targetDevice.TryGetFeatureValue(CommonUsages.secondaryButton, out bool secondaryButtonValue) && secondaryButtonValue)
         {
-            Debug.Log("Pressing Secondary Button");
+            Debug.Log("Mà dreta: Botó secundari");
 
-            if(!sceneChanged && timerScene > 10f)
+            if (!sceneChanged && timerScene > 10f)
             {
-                Scene scene = SceneManager.GetActiveScene(); 
+                Scene scene = SceneManager.GetActiveScene();
                 SceneManager.LoadScene(scene.name);
 
                 sceneChanged = true;
@@ -62,3 +52,25 @@ public class HandPresence : MonoBehaviour
         }
     }
 }
+
+/*
+
+A = primaryButton
+B = secondaryButton
+Joystick = primary2DAxis (x, y)
+Dit índex = trigger (float) // triggerButton
+Dit cor = grip (float) // gripButton
+
+
+Exemples de A, Índex i Joystick:
+
+if (targetDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool primaryButtonValue) && primaryButtonValue)
+    Debug.Log("Pressing Primary Button");
+
+if (targetDevice.TryGetFeatureValue(CommonUsages.trigger, out float triggerValue) && triggerValue > 0.1f)
+    Debug.Log("Trigger pressed " + triggerValue);
+
+if (targetDevice.TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 primary2DAxisValue) && primary2DAxisValue != Vector2.zero)
+    Debug.Log("Primary Touchpad " + primary2DAxisValue);
+
+*/
