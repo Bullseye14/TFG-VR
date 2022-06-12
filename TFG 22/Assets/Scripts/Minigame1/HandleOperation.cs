@@ -31,16 +31,15 @@ public class HandleOperation : MonoBehaviour
         AssignRandomPosition(GetInitialNumber(operationType, result.operationResult));
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        // All three spaces are filled
+    // We where checking at all times if the operation is correct, we just have to do it when a number changes
+    public void CheckOperation()
+    {   // All three spaces are filled
         if (num1.numbered && num2.numbered && num3.numbered)
         {
             // We check whether the operation is correct depending on the type of operation
             if (!OperationCorrect(operationType, num1.number, num2.number, num3.number, result.operationResult))
             {
-                if(!incorrect)
+                if (!incorrect)
                 {
                     // If it's incorrect, we change the material of the bar to red
                     indicator.GetComponent<MeshRenderer>().material = indicatorMat[1];
@@ -54,7 +53,7 @@ public class HandleOperation : MonoBehaviour
 
             if (OperationCorrect(operationType, num1.number, num2.number, num3.number, result.operationResult))
             {
-                if(!correct)
+                if (!correct)
                 {
                     // If it's correct, we change the material of the bar to green
                     indicator.GetComponent<MeshRenderer>().material = indicatorMat[0];

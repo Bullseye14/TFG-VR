@@ -378,6 +378,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 068dfa3768b66fb4292c87a5a7cea533, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  handleOperation: {fileID: 2139654671}
   numbers:
   - {fileID: 919132149155446097, guid: 7167f25dd1d9f9449a43b2429d2b098b, type: 3}
   - {fileID: 919132149155446097, guid: c6ca07f9884123344bd1547787f86eea, type: 3}
@@ -2329,6 +2330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 068dfa3768b66fb4292c87a5a7cea533, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  handleOperation: {fileID: 2139654671}
   numbers:
   - {fileID: 919132149155446097, guid: 7167f25dd1d9f9449a43b2429d2b098b, type: 3}
   - {fileID: 919132149155446097, guid: c6ca07f9884123344bd1547787f86eea, type: 3}
@@ -2555,6 +2557,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 068dfa3768b66fb4292c87a5a7cea533, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  handleOperation: {fileID: 150082175}
   numbers:
   - {fileID: 919132149155446097, guid: 7167f25dd1d9f9449a43b2429d2b098b, type: 3}
   - {fileID: 919132149155446097, guid: c6ca07f9884123344bd1547787f86eea, type: 3}
@@ -2906,6 +2909,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 068dfa3768b66fb4292c87a5a7cea533, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  handleOperation: {fileID: 150082175}
   numbers:
   - {fileID: 919132149155446097, guid: 7167f25dd1d9f9449a43b2429d2b098b, type: 3}
   - {fileID: 919132149155446097, guid: c6ca07f9884123344bd1547787f86eea, type: 3}
@@ -3612,6 +3616,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 068dfa3768b66fb4292c87a5a7cea533, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  handleOperation: {fileID: 1243850962}
   numbers:
   - {fileID: 919132149155446097, guid: 7167f25dd1d9f9449a43b2429d2b098b, type: 3}
   - {fileID: 919132149155446097, guid: c6ca07f9884123344bd1547787f86eea, type: 3}
@@ -4133,6 +4138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 068dfa3768b66fb4292c87a5a7cea533, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  handleOperation: {fileID: 1243850962}
   numbers:
   - {fileID: 919132149155446097, guid: 7167f25dd1d9f9449a43b2429d2b098b, type: 3}
   - {fileID: 919132149155446097, guid: c6ca07f9884123344bd1547787f86eea, type: 3}
@@ -4479,6 +4485,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 068dfa3768b66fb4292c87a5a7cea533, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  handleOperation: {fileID: 2132371320}
   numbers:
   - {fileID: 919132149155446097, guid: 7167f25dd1d9f9449a43b2429d2b098b, type: 3}
   - {fileID: 919132149155446097, guid: c6ca07f9884123344bd1547787f86eea, type: 3}
@@ -4931,6 +4938,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 068dfa3768b66fb4292c87a5a7cea533, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  handleOperation: {fileID: 2132371320}
   numbers:
   - {fileID: 919132149155446097, guid: 7167f25dd1d9f9449a43b2429d2b098b, type: 3}
   - {fileID: 919132149155446097, guid: c6ca07f9884123344bd1547787f86eea, type: 3}
@@ -5834,6 +5842,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 068dfa3768b66fb4292c87a5a7cea533, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  handleOperation: {fileID: 1243850962}
   numbers:
   - {fileID: 919132149155446097, guid: 7167f25dd1d9f9449a43b2429d2b098b, type: 3}
   - {fileID: 919132149155446097, guid: c6ca07f9884123344bd1547787f86eea, type: 3}
@@ -6431,6 +6440,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 068dfa3768b66fb4292c87a5a7cea533, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  handleOperation: {fileID: 2139654671}
   numbers:
   - {fileID: 919132149155446097, guid: 7167f25dd1d9f9449a43b2429d2b098b, type: 3}
   - {fileID: 919132149155446097, guid: c6ca07f9884123344bd1547787f86eea, type: 3}
@@ -6594,6 +6604,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 068dfa3768b66fb4292c87a5a7cea533, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  handleOperation: {fileID: 2132371320}
   numbers:
   - {fileID: 919132149155446097, guid: 7167f25dd1d9f9449a43b2429d2b098b, type: 3}
   - {fileID: 919132149155446097, guid: c6ca07f9884123344bd1547787f86eea, type: 3}
@@ -7438,6 +7449,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 068dfa3768b66fb4292c87a5a7cea533, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  handleOperation: {fileID: 150082175}
   numbers:
   - {fileID: 919132149155446097, guid: 7167f25dd1d9f9449a43b2429d2b098b, type: 3}
   - {fileID: 919132149155446097, guid: c6ca07f9884123344bd1547787f86eea, type: 3}

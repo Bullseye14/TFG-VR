@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ColliderCube : MonoBehaviour
 {
+    public HandleOperation handleOperation;
+
     public List<GameObject> numbers;
 
     public int number = -1;
@@ -26,6 +28,8 @@ public class ColliderCube : MonoBehaviour
 
         if (newNumber > -1)
             Instantiate(numbers[newNumber], this.transform);
+
+        handleOperation.CheckOperation();
     }
 
     private void OnCollisionEnter(Collision collision)
