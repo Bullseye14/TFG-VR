@@ -10,24 +10,29 @@ public class ColliderCube : MonoBehaviour
 
     public bool numbered = false;
 
+    public void PlaceNewNumber(int newNumber)
+    {
+        // If there was no number, set numbered to true
+        if (!numbered)
+            numbered = true;
+
+        // Remove the previous number
+        foreach (Transform child in transform)
+        {
+            GameObject.Destroy(child.gameObject);
+        }
+
+        number = newNumber;
+
+        if (newNumber > -1)
+            Instantiate(numbers[newNumber], this.transform);
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         // If the ball touches a collider of the operation
         if (collision.collider.tag == "GreenBall")
-        {
-            // If there was no number, set numbered to true
-            if (!numbered)
-                numbered = true;
-
-            // Remove the previous number
-            foreach (Transform child in transform)
-            {
-                GameObject.Destroy(child.gameObject);
-            }
-
-            // Instantiate the new number
-            Instantiate(numbers[GetValue(collision.collider.name)], this.transform);
-        }
+            PlaceNewNumber(GetValue(collision.collider.name));
 
     }
 

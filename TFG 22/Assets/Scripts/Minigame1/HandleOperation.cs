@@ -20,6 +20,16 @@ public class HandleOperation : MonoBehaviour
     private bool incorrect = false;
 
     public GameObject indicator;
+    public GameObject lightBulb;
+
+    private void Start()
+    {
+        // A mode de tutorial, farem que un número que pot ser solució
+        // aparegui en una de les tres posicions, perque s'entengui que
+        // en aquells espais han d'anar-hi números
+
+        AssignRandomPosition(GetInitialNumber(operationType, result.operationResult));
+    }
 
     // Update is called once per frame
     void Update()
@@ -34,6 +44,7 @@ public class HandleOperation : MonoBehaviour
                 {
                     // If it's incorrect, we change the material of the bar to red
                     indicator.GetComponent<MeshRenderer>().material = indicatorMat[1];
+                    lightBulb.GetComponent<Light>().color = Color.red;
 
                     // This makes us not to be changing at all frames the material, only the first time
                     correct = false;
@@ -47,6 +58,7 @@ public class HandleOperation : MonoBehaviour
                 {
                     // If it's correct, we change the material of the bar to green
                     indicator.GetComponent<MeshRenderer>().material = indicatorMat[0];
+                    lightBulb.GetComponent<Light>().color = Color.green;
 
                     // This makes us not to be changing at all frames the material, only the first time
                     correct = true;
@@ -81,5 +93,52 @@ public class HandleOperation : MonoBehaviour
         }
 
         return false;
+    }
+
+    private int GetInitialNumber(int operationType, int result)
+    {
+        // If the result is 0, the only possible number is 0
+        if (result == 0) return 0;
+
+        // If the result is lower than 9, 0 to result are possible answers
+        else if (result <= 9)
+            return Random.Range(0, result);
+
+        // If the result is between 9 and 18, all numbers are possible
+        else if (result <= 18)
+            return Random.Range(0, 9);
+
+        // If the result is between 19 and 26, we have to increase proportionally the minimum number
+        else if (result < 27)
+            return Random.Range(result - 18, 9);
+
+        // If the result is 27, the only possible number is 9
+        else return 9;
+    }
+
+    private void AssignRandomPosition(int tutoNumber)
+    {
+        int position = Random.Range(0, 3);
+
+        switch(position)
+        {
+            case 0:
+                num1.numbered = true;
+                num1.PlaceNewNumber(tutoNumber);
+                break;
+
+            case 1:
+                num2.numbered = true;
+                num2.PlaceNewNumber(tutoNumber);
+                break;
+
+            case 2:
+                num3.numbered = true;
+                num3.PlaceNewNumber(tutoNumber);
+                break;
+
+            default:
+                break;
+        }
     }
 }
