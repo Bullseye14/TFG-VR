@@ -6,6 +6,8 @@ public class ColliderCube : MonoBehaviour
 {
     public HandleOperation handleOperation;
 
+    public WorldManager manager;
+
     public List<GameObject> numbers;
 
     public int number = -1;
@@ -30,6 +32,7 @@ public class ColliderCube : MonoBehaviour
             Instantiate(numbers[newNumber], this.transform);
 
         handleOperation.CheckOperation();
+        manager.CheckIfAllCorrect();
     }
 
     private void OnCollisionEnter(Collision collision)

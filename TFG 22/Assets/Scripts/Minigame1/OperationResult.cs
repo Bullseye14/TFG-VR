@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class OperationResult : MonoBehaviour
 {
-    public int operationType;
+    public HandleOperation handleOperation;
 
     public int operationResult = 0;
 
@@ -15,6 +15,8 @@ public class OperationResult : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        int operationType = handleOperation.operationType;
+
         // Minimum 0+0+0 = 0, Maximum 9+9+9 = 27 
         if(operationType == 1)
         {

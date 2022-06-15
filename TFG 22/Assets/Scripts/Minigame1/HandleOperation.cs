@@ -11,12 +11,13 @@ public class HandleOperation : MonoBehaviour
     // Type 2: Number * Number + Number
     // Type 3: Number * Number - Number
 
+    public OperatorsManager operators;
     public OperationResult result;
     public ColliderCube num1, num2, num3;
 
     public List<Material> indicatorMat;
 
-    private bool correct = false;
+    public bool correct = false;
     private bool incorrect = false;
 
     public GameObject indicator;
@@ -28,7 +29,10 @@ public class HandleOperation : MonoBehaviour
         // aparegui en una de les tres posicions, perque s'entengui que
         // en aquells espais han d'anar-hi números
 
-        AssignRandomPosition(GetInitialNumber(operationType, result.operationResult));
+        if (WorldManager.currentLevel == 1)
+            AssignRandomPosition(GetInitialNumber(operationType, result.operationResult));
+
+        operators.ChooseCorrectOperators(operationType);
     }
 
     // We where checking at all times if the operation is correct, we just have to do it when a number changes

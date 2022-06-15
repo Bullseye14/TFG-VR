@@ -26,10 +26,13 @@ public class LeftHandPresence : MonoBehaviour
 
     private void Update()
     {
-        // Y
+        // Y per passar a la següent escena (minigame 1 as a test)
         if (targetDevice.TryGetFeatureValue(CommonUsages.secondaryButton, out bool secondaryButtonValue) && secondaryButtonValue)
         {
-            Debug.Log("Mà esquerra: Botó secundari");
+            if (WorldManager.currentLevel == 0)
+                WorldManager.currentLevel = 5;
+
+            SceneManager.LoadScene("Minigame1");
         }
     }
 }
