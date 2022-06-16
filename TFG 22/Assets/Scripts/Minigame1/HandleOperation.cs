@@ -23,6 +23,8 @@ public class HandleOperation : MonoBehaviour
     public GameObject indicator;
     public GameObject lightBulb;
 
+    public WorldManager scoreManager;
+
     public void BuildOperators()
     {
         // A mode de tutorial, farem que un número que pot ser solució
@@ -76,25 +78,55 @@ public class HandleOperation : MonoBehaviour
 
     private bool OperationCorrect(int operationType, int number1, int number2, int number3, int numberResult)
     {
-        if(operationType == 1)
+        if (operationType == 1)
         {
-            if (number1 + number2 + number3 == numberResult) return true;
+            if (number1 + number2 + number3 == numberResult)
+            {
+                scoreManager.roundScore += 50;
 
-            else return false;
+                return true;
+            }
+
+            else
+            {
+                scoreManager.roundScore -= 20;
+
+                return false;
+            }
         }
 
         else if (operationType == 2)
         {
-            if (number1 * number2 + number3 == numberResult) return true;
+            if (number1 * number2 + number3 == numberResult)
+            {
+                scoreManager.roundScore += 70;
 
-            else return false;
+                return true;
+            }
+
+            else
+            {
+                scoreManager.roundScore -= 10;
+
+                return false;
+            }
         }
 
         else if (operationType == 3)
         {
-            if (number1 * number2 - number3 == numberResult) return true;
+            if (number1 * number2 - number3 == numberResult)
+            {
+                scoreManager.roundScore += 80;
 
-            else return false;
+                return true;
+            }
+
+            else
+            {
+                scoreManager.roundScore -= 10;
+
+                return false;
+            }
         }
 
         return false;
