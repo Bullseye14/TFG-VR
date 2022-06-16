@@ -6,10 +6,25 @@ using UnityEngine.SceneManagement;
 
 public class LeftHandPresence : MonoBehaviour
 {
+    public bool showController = false;
+
     private InputDevice targetDevice;
+
+    public GameObject controllerPrefab;
+    public GameObject handPrefab;
+
+    private GameObject spawnedController;
+    private GameObject spawnedHand;
+
+    private Animator handAnimator;
 
     // Start is called before the first frame update
     void Start()
+    {
+        TryInitialize();
+    }
+
+    void TryInitialize()
     {
         List<InputDevice> devices = new List<InputDevice>();
         InputDeviceCharacteristics leftControllerCharacteristics = InputDeviceCharacteristics.Left | InputDeviceCharacteristics.Controller;
@@ -21,19 +36,65 @@ public class LeftHandPresence : MonoBehaviour
         }
 
         if (devices.Count > 0)
+        {
             targetDevice = devices[0];
+
+            if (controllerPrefab)
+                spawnedController = Instantiate(controllerPrefab, transform);
+            else
+                Debug.Log("Couldn't find controller model");
+
+            spawnedHand = Instantiate(handPrefab, transform);
+            handAnimator = spawnedHand.GetComponent<Animator>();
+
+            spawnedController.SetActive(false);
+        }
+    }
+
+    void UpdateHandAnimation()
+    {
+        if (targetDevice.TryGetFeatureValue(CommonUsages.trigger, out float triggerValue))
+            handAnimator.SetFloat("Trigger", triggerValue);
+
+        else
+            handAnimator.SetFloat("Trigger", 0);
+
+        if (targetDevice.TryGetFeatureValue(CommonUsages.grip, out float gripValue))
+            handAnimator.SetFloat("Grip", gripValue);
+
+        else
+            handAnimator.SetFloat("Grip", 0);
     }
 
     private void Update()
     {
-        // Y per passar a la següent escena (minigame 1 as a test)
-        if (targetDevice.TryGetFeatureValue(CommonUsages.secondaryButton, out bool secondaryButtonValue) && secondaryButtonValue)
-        {
-            if (WorldManager.currentLevel == 0)
-                WorldManager.currentLevel = 1;
+        if (!targetDevice.isValid)
+            TryInitialize();
 
-            SceneManager.LoadScene("Minigame1");
-        }
+        else
+        {
+            //if(showController)
+            //{
+            //    spawnedHand.SetActive(false);
+            //    spawnedController.SetActive(true);
+            //}
+            //else
+            //{
+            //    spawnedHand.SetActive(true);
+            //    spawnedController.SetActive(false);
+            //}
+
+            UpdateHandAnimation();
+
+            // Y per passar a la següent escena (minigame 1 as a test)
+            if (targetDevice.TryGetFeatureValue(CommonUsages.secondaryButton, out bool secondaryButtonValue) && secondaryButtonValue)
+            {
+                if (WorldManager.currentLevel == 0)
+                    WorldManager.currentLevel = 1;
+
+                SceneManager.LoadScene("Minigame1");
+            }
+        }        
     }
 }
 
