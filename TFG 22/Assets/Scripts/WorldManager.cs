@@ -14,7 +14,14 @@ public class WorldManager : MonoBehaviour
     void Start()
     {
         if (currentLevel != 0)
+        {
             BuildLevel(currentLevel);
+
+            op1.BuildOperators();
+            op2.BuildOperators();
+            op3.BuildOperators();
+            op4.BuildOperators();
+        }            
     }
 
     public void CheckIfAllCorrect()
@@ -38,27 +45,38 @@ public class WorldManager : MonoBehaviour
         switch(level)
         {
             case 1:
-                op1.operationType = op2.operationType = op3.operationType = op4.operationType = 1;
+                op1.operationType = 1;
+                op2.operationType = 1; 
+                op3.operationType = 1; 
+                op4.operationType = 1;
                 break;
 
             case 2:
-                op1.operationType = op2.operationType = op3.operationType = 1;
+                op1.operationType = 1;
+                op2.operationType = 1;
+                op3.operationType = 1;
                 op4.operationType = 2;
                 break;
 
             case 3:
-                op1.operationType = op2.operationType = op3.operationType = 2;
+                op1.operationType = 2;
+                op2.operationType = 2;
+                op3.operationType = 2;
                 op4.operationType = 1;
                 break;
 
             case 4:
-                op1.operationType = op2.operationType = op3.operationType = 2;
+                op1.operationType = 2;
+                op2.operationType = 2;
+                op3.operationType = 2;
                 op4.operationType = 3;
                 break;
 
             case 5:
-                op1.operationType = op2.operationType = 2;
-                op4.operationType = op3.operationType = 3;
+                op1.operationType = 2;
+                op2.operationType = 2;
+                op4.operationType = 3;
+                op3.operationType = 3;
                 break;
 
             default:

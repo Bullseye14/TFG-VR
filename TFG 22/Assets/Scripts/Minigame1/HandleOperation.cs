@@ -23,7 +23,7 @@ public class HandleOperation : MonoBehaviour
     public GameObject indicator;
     public GameObject lightBulb;
 
-    private void Start()
+    public void BuildOperators()
     {
         // A mode de tutorial, farem que un número que pot ser solució
         // aparegui en una de les tres posicions, perque s'entengui que

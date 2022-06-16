@@ -8,10 +8,14 @@ public class OperatorsManager : MonoBehaviour
 
     public GameObject operator1, operator2;
     public GameObject operator3, operator4;
- 
+
+    public int operationType_ = -1;
+
     public void ChooseCorrectOperators(int operationType)
     {
-        switch(operationType)
+        operationType_ = operationType;
+
+        switch (operationType_)
         {
             // + & +
             case 1:

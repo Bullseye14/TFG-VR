@@ -30,7 +30,7 @@ public class LeftHandPresence : MonoBehaviour
         if (targetDevice.TryGetFeatureValue(CommonUsages.secondaryButton, out bool secondaryButtonValue) && secondaryButtonValue)
         {
             if (WorldManager.currentLevel == 0)
-                WorldManager.currentLevel = 5;
+                WorldManager.currentLevel = 1;
 
             SceneManager.LoadScene("Minigame1");
         }
