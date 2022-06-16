@@ -12,8 +12,7 @@ public class OperationResult : MonoBehaviour
 
     public List<GameObject> numbers;
 
-    // Start is called before the first frame update
-    void Start()
+    public void DetermineOperationResult()
     {
         int operationType = handleOperation.operationType;
 

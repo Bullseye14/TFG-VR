@@ -29,8 +29,10 @@ public class HandleOperation : MonoBehaviour
         // aparegui en una de les tres posicions, perque s'entengui que
         // en aquells espais han d'anar-hi números
 
+        result.DetermineOperationResult();
+
         if (WorldManager.currentLevel == 1)
-            AssignRandomPosition(GetInitialNumber(operationType, result.operationResult));
+            AssignRandomPosition(GetInitialNumber(result.operationResult));
 
         operators.ChooseCorrectOperators(operationType);
     }
@@ -98,25 +100,25 @@ public class HandleOperation : MonoBehaviour
         return false;
     }
 
-    private int GetInitialNumber(int operationType, int result)
+    private int GetInitialNumber(int result)
     {
-        // If the result is 0, the only possible number is 0
-        if (result == 0) return 0;
-
-        // If the result is lower than 9, 0 to result are possible answers
-        else if (result <= 9)
-            return Random.Range(0, result);
-
-        // If the result is between 9 and 18, all numbers are possible
-        else if (result <= 18)
-            return Random.Range(0, 9);
+        // If the result is 27, the only possible number is 9
+        if (result == 27) return 9;
 
         // If the result is between 19 and 26, we have to increase proportionally the minimum number
-        else if (result < 27)
+        else if (result > 18)
             return Random.Range(result - 18, 9);
 
-        // If the result is 27, the only possible number is 9
-        else return 9;
+        // If the result is between 9 and 18, all numbers are possible
+        else if (result > 9)
+            return Random.Range(0, 9);
+
+        // If the result is lower than 9, 0 to result are possible answers
+        else if (result > 0)
+            return Random.Range(0, result);
+
+        // If the result is 0, the only possible number is 0
+        else return 0;
     }
 
     private void AssignRandomPosition(int tutoNumber)
