@@ -8,9 +8,12 @@ public class TrailMovement : MonoBehaviour
 
     public Transform target;
 
+    public Vector3 iniPos;
+
     // Start is called before the first frame update
     void Start()
     {
+        this.transform.position = iniPos;
         transform.LookAt(new Vector3(target.position.x, transform.position.y, target.position.z));
     }
 
@@ -28,7 +31,15 @@ public class TrailMovement : MonoBehaviour
     {
         if (other.tag == "Waypoint")
         {
-            target = other.gameObject.GetComponent<Waypoint>().nextPoint;
+            target = other.gameObject.GetComponent<Waypoint>().possibleNextPoint[0];
+        }
+        else if (other.tag == "QuestionTrigger")
+        {
+
+        }
+        else if (other.tag == "FinalTrigger")
+        {
+
         }
     }
 }

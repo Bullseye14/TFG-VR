@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class Waypoint : MonoBehaviour
 {
-    public Transform nextPoint;
+    public List<Transform> possibleNextPoint;
 }
