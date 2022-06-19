@@ -1016,6 +1016,7 @@ MonoBehaviour:
   manager: {fileID: 1404792713}
   target: {fileID: 2080887914}
   iniPos: {x: -22.84, y: 1.8, z: -0.019}
+  iniRotation: {x: 0, y: -0.70710677, z: 0, w: 0.70710677}
   chooseScript: {fileID: 1933785768}
   moving: 1
   targets:
@@ -1120,7 +1121,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 721399057}
-  - component: {fileID: 721399056}
   m_Layer: 0
   m_Name: Camera Offset
   m_TagString: Untagged
@@ -1128,20 +1128,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &721399056
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 721399055}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 652698288122b9a41afcfc9dd93ff5ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cameraInitialPosition: {x: 0, y: 0, z: 0}
-  cameraInitialRotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!4 &721399057
 Transform:
   m_ObjectHideFlags: 0

@@ -11,6 +11,7 @@ public class TrailMovement : MonoBehaviour
     public Transform target;
 
     public Vector3 iniPos;
+    public Quaternion iniRotation;
 
     public ChooseQuestion chooseScript;
 
@@ -26,6 +27,7 @@ public class TrailMovement : MonoBehaviour
     void Start()
     {
         this.transform.position = iniPos;
+        this.transform.rotation = iniRotation;
         transform.LookAt(new Vector3(target.position.x, transform.position.y, target.position.z));
     }
 
