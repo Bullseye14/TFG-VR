@@ -90,24 +90,24 @@ public class LeftHandPresence : MonoBehaviour
 
             UpdateHandAnimation();
 
-            if (WorldManager.currentMinigame == 0)
-            {
-                // Y per passar a minigame 1
-                if (targetDevice.TryGetFeatureValue(CommonUsages.secondaryButton, out bool secondaryButtonValue) && secondaryButtonValue)
-                {
-                    WorldManager.currentMinigame = 1;
+            //if (WorldManager.currentMinigame == 0)
+            //{
+            //    // Y per passar a minigame 1
+            //    if (targetDevice.TryGetFeatureValue(CommonUsages.secondaryButton, out bool secondaryButtonValue) && secondaryButtonValue)
+            //    {
+            //        WorldManager.currentMinigame = 1;
 
-                    SceneManager.LoadScene("Minigame1");
-                }
+            //        SceneManager.LoadScene("Minigame1");
+            //    }
 
-                // X per passar a minigame3
-                else if(targetDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool primaryButtonValue) && primaryButtonValue)
-                {
-                    WorldManager.currentMinigame = 3;
+            //    // X per passar a minigame3
+            //    else if(targetDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool primaryButtonValue) && primaryButtonValue)
+            //    {
+            //        WorldManager.currentMinigame = 3;
 
-                    SceneManager.LoadScene("Minigame3");
-                }
-            }            
+            //        SceneManager.LoadScene("Minigame3");
+            //    }
+            //}            
         }        
     }
 }
