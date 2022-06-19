@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.XR;
 using UnityEngine.SceneManagement;
 
-public class RightHandPresence : MonoBehaviour
+public class LeftM3 : MonoBehaviour
 {
     public bool showController = false;
 
@@ -18,21 +18,21 @@ public class RightHandPresence : MonoBehaviour
 
     private Animator handAnimator;
 
-    public WorldManager manager;
+    public ManagerM3 manager;
 
     // Start is called before the first frame update
     void Start()
     {
         TryInitialize();
 
-        manager = GameObject.Find("World Manager").GetComponent<WorldManager>();
+        manager = GameObject.Find("World Manager M3").GetComponent<ManagerM3>();
     }
 
     void TryInitialize()
     {
         List<InputDevice> devices = new List<InputDevice>();
-        InputDeviceCharacteristics rightControllerCharacteristics = InputDeviceCharacteristics.Right | InputDeviceCharacteristics.Controller;
-        InputDevices.GetDevicesWithCharacteristics(rightControllerCharacteristics, devices);
+        InputDeviceCharacteristics leftControllerCharacteristics = InputDeviceCharacteristics.Left | InputDeviceCharacteristics.Controller;
+        InputDevices.GetDevicesWithCharacteristics(leftControllerCharacteristics, devices);
 
         foreach (var item in devices)
         {
@@ -70,8 +70,7 @@ public class RightHandPresence : MonoBehaviour
             handAnimator.SetFloat("Grip", 0);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (!targetDevice.isValid)
             TryInitialize();
@@ -83,14 +82,14 @@ public class RightHandPresence : MonoBehaviour
 
 /*
 
-A = primaryButton
-B = secondaryButton
+X = primaryButton
+Y = secondaryButton
 Joystick = primary2DAxis (x, y)
 Dit índex = trigger (float) // triggerButton
 Dit cor = grip (float) // gripButton
 
 
-Exemples de A, Índex i Joystick:
+Exemples de X, Índex i Joystick:
 
 if (targetDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool primaryButtonValue) && primaryButtonValue)
     Debug.Log("Pressing Primary Button");

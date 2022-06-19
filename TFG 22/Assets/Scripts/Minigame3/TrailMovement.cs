@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TrailMovement : MonoBehaviour
 {
-    public WorldManager manager;
+    public ManagerM3 manager;
 
     float speed = 3.0f;
 
@@ -34,9 +34,9 @@ public class TrailMovement : MonoBehaviour
     {
         if(!moving)
         {
-            if(!manager.m3waiting)
+            if(!manager.waiting)
             {
-                target = targets[manager.m3response];
+                target = targets[manager.response];
                 moving = true;
             }
         }
@@ -56,7 +56,7 @@ public class TrailMovement : MonoBehaviour
             if(!touchedQuestion)
             {
                 moving = false;
-                manager.m3waiting = true;
+                manager.waiting = true;
 
                 touchedQuestion = true;
             }

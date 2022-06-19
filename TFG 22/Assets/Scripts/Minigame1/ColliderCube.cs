@@ -6,7 +6,7 @@ public class ColliderCube : MonoBehaviour
 {
     public HandleOperation handleOperation;
 
-    public WorldManager manager;
+    public ManagerM1 manager;
 
     public List<GameObject> numbers;
 

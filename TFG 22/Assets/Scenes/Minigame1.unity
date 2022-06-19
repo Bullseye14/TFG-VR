@@ -579,7 +579,7 @@ MonoBehaviour:
   m_UpdateTrackingType: 0
   m_EnableInputTracking: 1
   m_EnableInputActions: 1
-  m_ModelPrefab: {fileID: 3645695762754558946, guid: d1f4be34ae77f384581987a107f63028,
+  m_ModelPrefab: {fileID: 3645695762754558946, guid: bdaab62bf2cdf2b4099f8a6e67e3f1ab,
     type: 3}
   m_ModelParent: {fileID: 0}
   m_Model: {fileID: 0}
@@ -3948,7 +3948,7 @@ GameObject:
   - component: {fileID: 811148830}
   - component: {fileID: 811148829}
   m_Layer: 0
-  m_Name: World Manager
+  m_Name: World Manager M1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3963,10 +3963,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 811148828}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bb252f2ceec7f1479cd3ce878078c5e, type: 3}
+  m_Script: {fileID: 11500000, guid: 98e795ee8c91d7d459dd3e4448312d08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minigame: 1
   roundScore: 0
   timeMesh:
   - {fileID: 1844585598}
@@ -5106,7 +5105,7 @@ MonoBehaviour:
   m_UpdateTrackingType: 0
   m_EnableInputTracking: 1
   m_EnableInputActions: 1
-  m_ModelPrefab: {fileID: 8778762347984461544, guid: dd7c9fab3b2c6ce448e7fed68e2225f2,
+  m_ModelPrefab: {fileID: 8778762347984461544, guid: a515c37da8a903d4799038848cc24a43,
     type: 3}
   m_ModelParent: {fileID: 0}
   m_Model: {fileID: 0}

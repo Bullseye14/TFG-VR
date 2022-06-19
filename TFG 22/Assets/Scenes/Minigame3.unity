@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -260,7 +260,7 @@ MonoBehaviour:
   m_UpdateTrackingType: 0
   m_EnableInputTracking: 1
   m_EnableInputActions: 1
-  m_ModelPrefab: {fileID: 8778762347984461544, guid: dd7c9fab3b2c6ce448e7fed68e2225f2,
+  m_ModelPrefab: {fileID: 8778762347984461544, guid: 47c538ad6ade7824db477153d07561a5,
     type: 3}
   m_ModelParent: {fileID: 0}
   m_Model: {fileID: 0}
@@ -1600,7 +1600,7 @@ GameObject:
   - component: {fileID: 1404792714}
   - component: {fileID: 1404792713}
   m_Layer: 0
-  m_Name: World Manager
+  m_Name: World Manager M3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1615,19 +1615,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1404792712}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bb252f2ceec7f1479cd3ce878078c5e, type: 3}
+  m_Script: {fileID: 11500000, guid: cb23563a63ccf27469c322487cc85ebf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minigame: 3
-  roundScore: 0
-  timeMesh: []
-  op1: {fileID: 0}
-  op2: {fileID: 0}
-  op3: {fileID: 0}
-  op4: {fileID: 0}
-  m3timer: 0
-  m3waiting: 0
-  m3response: 1
+  timer: 0
+  waiting: 0
+  response: 1
 --- !u!4 &1404792714
 Transform:
   m_ObjectHideFlags: 0
@@ -1781,7 +1774,7 @@ MonoBehaviour:
   m_UpdateTrackingType: 0
   m_EnableInputTracking: 1
   m_EnableInputActions: 1
-  m_ModelPrefab: {fileID: 3645695762754558946, guid: d1f4be34ae77f384581987a107f63028,
+  m_ModelPrefab: {fileID: 3645695762754558946, guid: 957e6bf5c1931a445ac4de0d10056194,
     type: 3}
   m_ModelParent: {fileID: 0}
   m_Model: {fileID: 0}

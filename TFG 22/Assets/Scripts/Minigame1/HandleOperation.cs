@@ -23,7 +23,7 @@ public class HandleOperation : MonoBehaviour
     public GameObject indicator;
     public GameObject lightBulb;
 
-    public WorldManager scoreManager;
+    public ManagerM1 scoreManager;
 
     public void BuildOperators()
     {
@@ -33,7 +33,7 @@ public class HandleOperation : MonoBehaviour
 
         result.DetermineOperationResult();
 
-        if (WorldManager.currentLevel == 1)
+        if (ManagerM1.currentLevel == 1)
             AssignRandomPosition(GetInitialNumber(result.operationResult));
 
         operators.ChooseCorrectOperators(operationType);

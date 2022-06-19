@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.XR;
 using UnityEngine.SceneManagement;
 
-public class RightHandPresence : MonoBehaviour
+public class RightM3 : MonoBehaviour
 {
     public bool showController = false;
 
@@ -18,14 +18,14 @@ public class RightHandPresence : MonoBehaviour
 
     private Animator handAnimator;
 
-    public WorldManager manager;
+    public ManagerM3 manager;
 
     // Start is called before the first frame update
     void Start()
     {
         TryInitialize();
 
-        manager = GameObject.Find("World Manager").GetComponent<WorldManager>();
+        manager = GameObject.Find("World Manager M3").GetComponent<ManagerM3>();
     }
 
     void TryInitialize()
@@ -77,7 +77,25 @@ public class RightHandPresence : MonoBehaviour
             TryInitialize();
 
         else
+        {
             UpdateHandAnimation();
+
+            if (manager.waiting)
+            {
+                if (targetDevice.TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 primary2DAxisValue) && primary2DAxisValue != Vector2.zero)
+                {
+                    if (primary2DAxisValue.x > 0.7)
+                        manager.response = 2;
+
+                    else if (primary2DAxisValue.x < -0.7)
+                        manager.response = 0;
+
+
+                    if (primary2DAxisValue.y > 0.7)
+                        manager.response = 1;
+                }
+            }
+        }      
     }
 }
 
