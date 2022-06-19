@@ -10,6 +10,8 @@ public class WorldManager : MonoBehaviour
     public static int currentLevel = 0;
     public static int currentScore = 0;
 
+    public int minigame = 0;
+
     private int fixScore = 0;
     private int finalScore = 0;
     public int roundScore = 0;
@@ -20,39 +22,79 @@ public class WorldManager : MonoBehaviour
 
     public HandleOperation op1, op2, op3, op4;
 
+    public float m3timer = 0f;
+    public bool m3waiting = false;
+    public int m3response = 1;
+
     void Start()
     {
-        if (currentLevel != 0)
+        if (minigame != 0)
         {
-            BuildLevel(currentLevel);
+            if (minigame == 1)
+            {
+                BuildLevel(currentLevel);
 
-            fixScore = (int)timeRemaining * 2;
-            finalScore = 0;
-            roundScore = 0;
+                fixScore = (int)timeRemaining * 2;
+                finalScore = 0;
+                roundScore = 0;
 
-            op1.BuildOperators();
-            op2.BuildOperators();
-            op3.BuildOperators();
-            op4.BuildOperators();
+                op1.BuildOperators();
+                op2.BuildOperators();
+                op3.BuildOperators();
+                op4.BuildOperators();
+            }
+
+            else if (minigame == 2)
+            {
+
+            }
+
+            else if (minigame == 3)
+            {
+
+            }
         }            
     }
 
     private void Update()
     {
-        if (currentLevel != 0)
+        if (minigame != 0)
         {
-            if (timeRemaining > 0.0f)
-                timeRemaining -= Time.deltaTime;
+            if (minigame == 1)
+            {
+                if (timeRemaining > 0.0f)
+                    timeRemaining -= Time.deltaTime;
 
-            timeMesh[0].text = timeMesh[1].text = ((int)timeRemaining / 60).ToString() + " : " + ((int)timeRemaining - ((int)timeRemaining / 60) * 60).ToString();
+                timeMesh[0].text = timeMesh[1].text = ((int)timeRemaining / 60).ToString() + " : " + ((int)timeRemaining - ((int)timeRemaining / 60) * 60).ToString();
 
-            fixScore = (int)timeRemaining * 2;
+                fixScore = (int)timeRemaining * 2;
 
-            finalScore = fixScore + roundScore;
+                finalScore = fixScore + roundScore;
 
-            timeMesh[2].text = "Round: " + finalScore.ToString();
+                timeMesh[2].text = "Round: " + finalScore.ToString();
 
-            timeMesh[3].text = "Total Score: " + currentScore.ToString();
+                timeMesh[3].text = "Total Score: " + currentScore.ToString();
+            }
+            
+            else if (minigame == 2)
+            {
+
+            }
+
+            else if (minigame == 3)
+            {
+                if(m3waiting)
+                {
+                    if (m3timer <= 15.0f)
+                        m3timer += Time.deltaTime;
+
+                    else
+                    {
+                        m3waiting = false;
+                        m3timer = 0f;
+                    }
+                }
+            }
         }
     }
 

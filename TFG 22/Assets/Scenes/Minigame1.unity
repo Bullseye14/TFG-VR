@@ -3966,6 +3966,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bb252f2ceec7f1479cd3ce878078c5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minigame: 1
   roundScore: 0
   timeMesh:
   - {fileID: 1844585598}

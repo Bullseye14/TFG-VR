@@ -8,6 +8,8 @@ using TMPro;
 
 public class ChooseQuestion : MonoBehaviour
 {
+    public TrailMovement movement;
+
     private List<string> allText;
 
     public List<string> answers;
@@ -29,36 +31,40 @@ public class ChooseQuestion : MonoBehaviour
         GetNewQuestion();
     }
 
-    private void GetNewQuestion()
+    public void GetNewQuestion()
     {
-        // Ens diu la línia on està la pregunta escollida random
-        questionLine = Random.Range(0, allText.Count) / 4 * 4;
+        if (allText.Count > 1)
+        {
+            // Ens diu la línia on està la pregunta escollida random
+            questionLine = Random.Range(0, allText.Count) / 4 * 4;
 
-        // Assignem el text de la pregunta al TMP
-        question.text = allText[questionLine];
+            // Assignem el text de la pregunta al TMP
+            question.text = allText[questionLine];
 
-        // Afegim les 3 possibles respostes a una llista "answers"
-        answers.Add(allText[questionLine + 1]);
-        answers.Add(allText[questionLine + 2]);
-        answers.Add(allText[questionLine + 3]);
+            // Afegim les 3 possibles respostes a una llista "answers"
+            answers.Add(allText[questionLine + 1]);
+            answers.Add(allText[questionLine + 2]);
+            answers.Add(allText[questionLine + 3]);
 
-        // Decidim en quina de les 3 preguntes anirà la resposta correcta
-        correctIndex = Random.Range(0, 3);
+            // Decidim en quina de les 3 preguntes anirà la resposta correcta
+            correctIndex = Random.Range(0, 3);
 
-        // Assignem la resposta correcta a una de les tres preguntes
-        answersList[correctIndex].text = answers[2];
-        answersList[correctIndex].color = Color.green;
+            // Assignem la resposta correcta a una de les tres preguntes
+            answersList[correctIndex].text = answers[2];
 
-        FillQuestions(correctIndex);
+            FillQuestions(correctIndex);
 
-        // Esborrem les 3 respostes i la pregunta de la llista principal, així no tornaran a apareixer
-        allText.RemoveAt(questionLine + 3);
-        allText.RemoveAt(questionLine + 2);
-        allText.RemoveAt(questionLine + 1);
-        allText.RemoveAt(questionLine);
+            // Esborrem les 3 respostes i la pregunta de la llista principal, així no tornaran a apareixer
+            allText.RemoveAt(questionLine + 3);
+            allText.RemoveAt(questionLine + 2);
+            allText.RemoveAt(questionLine + 1);
+            allText.RemoveAt(questionLine);
 
-        // Buidem la llista helper de answers, per quan la tornem a fer servir
-        answers.Clear();
+            // Buidem la llista helper de answers, per quan la tornem a fer servir
+            answers.Clear();
+        }
+
+        else movement.moving = false;
     }
 
     private void FillQuestions(int firstRandom)

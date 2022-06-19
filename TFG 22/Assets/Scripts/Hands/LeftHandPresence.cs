@@ -18,10 +18,14 @@ public class LeftHandPresence : MonoBehaviour
 
     private Animator handAnimator;
 
+    public WorldManager manager;
+
     // Start is called before the first frame update
     void Start()
     {
         TryInitialize();
+
+        manager = GameObject.Find("World Manager").GetComponent<WorldManager>();
     }
 
     void TryInitialize()
@@ -86,14 +90,19 @@ public class LeftHandPresence : MonoBehaviour
 
             UpdateHandAnimation();
 
-            // Y per passar a la següent escena (minigame 1 as a test)
-            if (targetDevice.TryGetFeatureValue(CommonUsages.secondaryButton, out bool secondaryButtonValue) && secondaryButtonValue)
+            if (manager.minigame == 0)
             {
-                if (WorldManager.currentLevel == 0)
-                    WorldManager.currentLevel = 1;
+                // Y per passar a la següent escena (minigame 1 as a test)
+                if (targetDevice.TryGetFeatureValue(CommonUsages.secondaryButton, out bool secondaryButtonValue) && secondaryButtonValue)
+                {
+                    if (WorldManager.currentLevel == 0)
+                        WorldManager.currentLevel = 1;
 
-                SceneManager.LoadScene("Minigame1");
-            }
+                    manager.minigame = 1;
+
+                    SceneManager.LoadScene("Minigame1");
+                }
+            }            
         }        
     }
 }

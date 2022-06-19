@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class RightHandPresence : MonoBehaviour
 {
+    public WorldManager manager;
+
     public bool showController = false;
 
     private InputDevice targetDevice;
@@ -26,6 +28,8 @@ public class RightHandPresence : MonoBehaviour
     void Start()
     {
         TryInitialize();
+
+        manager = GameObject.Find("World Manager").GetComponent<WorldManager>();
     }
 
     void TryInitialize()
@@ -91,24 +95,46 @@ public class RightHandPresence : MonoBehaviour
 
             UpdateHandAnimation();
 
-            if (timerScene <= 10f)
-                timerScene += Time.deltaTime;
-            else
-                sceneChanged = false;
-
-            // B de la mà dreta per reiniciar l'escena
-            if (targetDevice.TryGetFeatureValue(CommonUsages.secondaryButton, out bool secondaryButtonValue) && secondaryButtonValue)
+            if (manager.minigame == 1)
             {
-                Debug.Log("Mà dreta: Botó secundari");
+                if (timerScene <= 10f)
+                    timerScene += Time.deltaTime;
+                else
+                    sceneChanged = false;
 
-                if (!sceneChanged && timerScene > 10f)
+                // B de la mà dreta per reiniciar l'escena
+                if (targetDevice.TryGetFeatureValue(CommonUsages.secondaryButton, out bool secondaryButtonValue) && secondaryButtonValue)
                 {
-                    Scene scene = SceneManager.GetActiveScene();
-                    SceneManager.LoadScene(scene.name);
+                    Debug.Log("Mà dreta: Botó secundari");
 
-                    sceneChanged = true;
-                    timerScene = 0f;
+                    if (!sceneChanged && timerScene > 10f)
+                    {
+                        Scene scene = SceneManager.GetActiveScene();
+                        SceneManager.LoadScene(scene.name);
+
+                        sceneChanged = true;
+                        timerScene = 0f;
+                    }
                 }
+            }
+            
+            else if (manager.minigame == 3)
+            {
+                if (manager.m3waiting)
+                {
+                    if (targetDevice.TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 primary2DAxisValue) && primary2DAxisValue != Vector2.zero)
+                    {
+                        if (primary2DAxisValue.x > 0.7)
+                            manager.m3response = 2;
+
+                        else if (primary2DAxisValue.x < -0.7)
+                            manager.m3response = 0;
+
+
+                        if (primary2DAxisValue.y > 0.7)
+                            manager.m3response = 1;
+                    }
+                }                    
             }
         }
     }
