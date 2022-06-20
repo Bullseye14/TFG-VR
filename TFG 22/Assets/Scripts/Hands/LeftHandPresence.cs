@@ -77,38 +77,18 @@ public class LeftHandPresence : MonoBehaviour
 
         else
         {
-            //if(showController)
-            //{
-            //    spawnedHand.SetActive(false);
-            //    spawnedController.SetActive(true);
-            //}
-            //else
-            //{
-            //    spawnedHand.SetActive(true);
-            //    spawnedController.SetActive(false);
-            //}
-
             UpdateHandAnimation();
 
-            //if (WorldManager.currentMinigame == 0)
-            //{
-            //    // Y per passar a minigame 1
-            //    if (targetDevice.TryGetFeatureValue(CommonUsages.secondaryButton, out bool secondaryButtonValue) && secondaryButtonValue)
-            //    {
-            //        WorldManager.currentMinigame = 1;
-
-            //        SceneManager.LoadScene("Minigame1");
-            //    }
-
-            //    // X per passar a minigame3
-            //    else if(targetDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool primaryButtonValue) && primaryButtonValue)
-            //    {
-            //        WorldManager.currentMinigame = 3;
-
-            //        SceneManager.LoadScene("Minigame3");
-            //    }
-            //}            
-        }        
+            // If right now the right ray is working, we may want to enable the left one
+            if (!manager.rayLeft)
+            {
+                if (targetDevice.TryGetFeatureValue(CommonUsages.grip, out float gripValue) && gripValue > 0.5f)
+                {
+                    manager.rayLeft = true;
+                    manager.ChangeRayWorking();
+                }
+            }
+        }
     }
 }
 

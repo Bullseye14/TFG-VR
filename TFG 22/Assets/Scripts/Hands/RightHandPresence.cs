@@ -77,7 +77,19 @@ public class RightHandPresence : MonoBehaviour
             TryInitialize();
 
         else
+        {
             UpdateHandAnimation();
+
+            // If right now the left ray is working, we may want to enable the right one
+            if(manager.rayLeft)
+            {
+                if(targetDevice.TryGetFeatureValue(CommonUsages.grip, out float gripValue) && gripValue > 0.5f)
+                {
+                    manager.rayLeft = false;
+                    manager.ChangeRayWorking();
+                }
+            }
+        }
     }
 }
 

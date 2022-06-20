@@ -82,15 +82,11 @@ public class HandleOperation : MonoBehaviour
         {
             if (number1 + number2 + number3 == numberResult)
             {
-                scoreManager.roundScore += 50;
-
                 return true;
             }
 
             else
             {
-                scoreManager.roundScore -= 20;
-
                 return false;
             }
         }
@@ -99,15 +95,11 @@ public class HandleOperation : MonoBehaviour
         {
             if (number1 * number2 + number3 == numberResult)
             {
-                scoreManager.roundScore += 70;
-
                 return true;
             }
 
             else
             {
-                scoreManager.roundScore -= 10;
-
                 return false;
             }
         }
@@ -116,15 +108,11 @@ public class HandleOperation : MonoBehaviour
         {
             if (number1 * number2 - number3 == numberResult)
             {
-                scoreManager.roundScore += 80;
-
                 return true;
             }
 
             else
             {
-                scoreManager.roundScore -= 10;
-
                 return false;
             }
         }

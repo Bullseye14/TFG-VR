@@ -8,6 +8,10 @@ public class WorldManager : MonoBehaviour
     public static int currentMinigame = 0;
     public static int currentScore = 0;
 
+    public bool rayLeft = false;
+
+    public GameObject leftRay, rightRay;
+
     public void GoToMinigame(GameObject minigame)
     {
         string name = minigame.name;
@@ -40,5 +44,19 @@ public class WorldManager : MonoBehaviour
     {
         Vector3 iniScale = Vector3.one * 2;
         GO.transform.localScale = iniScale;
+    }
+
+    public void ChangeRayWorking()
+    {
+        if(rayLeft)
+        {
+            leftRay.SetActive(true);
+            rightRay.SetActive(false);
+        }
+        else
+        {
+            leftRay.SetActive(false);
+            rightRay.SetActive(true);
+        }
     }
 }
