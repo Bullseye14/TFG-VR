@@ -30,4 +30,15 @@ public class WorldManager : MonoBehaviour
             SceneManager.LoadScene("Minigame3");
         }
     }
+    public void AmplifyGO(GameObject GO)
+    {
+        Vector3 amplifyScale = Vector3.one * 4;
+        GO.transform.localScale = amplifyScale;
+    }
+
+    public void ReduceGO(GameObject GO)
+    {
+        Vector3 iniScale = Vector3.one * 2;
+        GO.transform.localScale = iniScale;
+    }
 }

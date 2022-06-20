@@ -181,9 +181,9 @@ GameObject:
   - component: {fileID: 425861715}
   - component: {fileID: 425861718}
   - component: {fileID: 425861717}
-  - component: {fileID: 425861716}
   - component: {fileID: 425861720}
   - component: {fileID: 425861719}
+  - component: {fileID: 425861716}
   m_Layer: 8
   m_Name: Minigame3
   m_TagString: Untagged
@@ -199,8 +199,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 425861714}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.2675, y: 0.06999999, z: 3.9463}
-  m_LocalScale: {x: 1.6947, y: 1.6947, z: 1.6947}
+  m_LocalPosition: {x: 7.84, y: 1.8499999, z: 7.23}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 1442487498}
   m_RootOrder: 3
@@ -294,17 +294,33 @@ MonoBehaviour:
       m_Calls: []
   m_HoverEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2054115504}
+        m_MethodName: AmplifyGO
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 425861714}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_HoverExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2054115504}
+        m_MethodName: ReduceGO
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 425861714}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_FirstSelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_LastSelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2054115504}
@@ -318,6 +334,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  m_LastSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
@@ -386,8 +408,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  m_ThrowVelocityScale: 1.5
-  m_ThrowAngularVelocityScale: 1
+  m_ThrowVelocityScale: 0
+  m_ThrowAngularVelocityScale: 0
   m_ForceGravityOnDetach: 0
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
@@ -399,10 +421,10 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 425861714}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 50
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -945,9 +967,9 @@ GameObject:
   - component: {fileID: 898121333}
   - component: {fileID: 898121336}
   - component: {fileID: 898121335}
-  - component: {fileID: 898121334}
   - component: {fileID: 898121338}
   - component: {fileID: 898121337}
+  - component: {fileID: 898121334}
   m_Layer: 8
   m_Name: Minigame1
   m_TagString: Untagged
@@ -963,8 +985,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 898121332}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.2397, y: 0.07, z: 3.9463}
-  m_LocalScale: {x: 1.6947, y: 1.6947, z: 1.6947}
+  m_LocalPosition: {x: -5.41, y: 1.85, z: 3.89}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 1442487498}
   m_RootOrder: 1
@@ -1058,17 +1080,33 @@ MonoBehaviour:
       m_Calls: []
   m_HoverEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2054115504}
+        m_MethodName: AmplifyGO
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 898121332}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_HoverExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2054115504}
+        m_MethodName: ReduceGO
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 898121332}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_FirstSelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_LastSelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2054115504}
@@ -1082,6 +1120,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  m_LastSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
@@ -1150,8 +1194,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  m_ThrowVelocityScale: 1.5
-  m_ThrowAngularVelocityScale: 1
+  m_ThrowVelocityScale: 0
+  m_ThrowAngularVelocityScale: 0
   m_ForceGravityOnDetach: 0
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
@@ -1163,10 +1207,10 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 898121332}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 50
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -2140,8 +2184,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2046388294}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.0589298, y: -0.6294775, z: 0.0059481114}
-  m_LocalScale: {x: 1.5494, y: 1.5494, z: 1.5494}
+  m_LocalPosition: {x: 1.0589298, y: -0.6294775, z: 6.65}
+  m_LocalScale: {x: 3.1105754, y: 3.1105754, z: 3.1105754}
   m_Children: []
   m_Father: {fileID: 1442487498}
   m_RootOrder: 0
@@ -2200,9 +2244,9 @@ GameObject:
   - component: {fileID: 2071096483}
   - component: {fileID: 2071096486}
   - component: {fileID: 2071096485}
-  - component: {fileID: 2071096484}
   - component: {fileID: 2071096488}
   - component: {fileID: 2071096487}
+  - component: {fileID: 2071096484}
   m_Layer: 8
   m_Name: Minigame2
   m_TagString: Untagged
@@ -2218,8 +2262,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2071096482}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.2174, y: 0.06999999, z: 4.7937}
-  m_LocalScale: {x: 1.6947, y: 1.6947, z: 1.6947}
+  m_LocalPosition: {x: 1.2174, y: 1.8499999, z: 11.67}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 1442487498}
   m_RootOrder: 2
@@ -2313,17 +2357,33 @@ MonoBehaviour:
       m_Calls: []
   m_HoverEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2054115504}
+        m_MethodName: AmplifyGO
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2071096482}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_HoverExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2054115504}
+        m_MethodName: ReduceGO
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2071096482}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_FirstSelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_LastSelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2054115504}
@@ -2337,6 +2397,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  m_LastSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
@@ -2405,8 +2471,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  m_ThrowVelocityScale: 1.5
-  m_ThrowAngularVelocityScale: 1
+  m_ThrowVelocityScale: 0
+  m_ThrowAngularVelocityScale: 0
   m_ForceGravityOnDetach: 0
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
@@ -2418,10 +2484,10 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2071096482}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 50
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
