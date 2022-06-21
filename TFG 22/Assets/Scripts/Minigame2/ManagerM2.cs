@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class ManagerM2 : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public int level = 1;
 
-    // Update is called once per frame
-    void Update()
+    public HandleTable tableHandler;
+
+    private void Start()
     {
-        
+        tableHandler.ProduceNumbers(level);
     }
 }

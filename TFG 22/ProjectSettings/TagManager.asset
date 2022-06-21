@@ -12,6 +12,7 @@ TagManager:
   - MagnetRight
   - FinalTrigger
   - QuestionTrigger
+  - PiecePosition
   layers:
   - Default
   - TransparentFX
