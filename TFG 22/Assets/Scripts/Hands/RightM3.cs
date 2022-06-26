@@ -85,14 +85,14 @@ public class RightM3 : MonoBehaviour
                 if (targetDevice.TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 primary2DAxisValue) && primary2DAxisValue != Vector2.zero)
                 {
                     if (primary2DAxisValue.x > 0.7)
-                        manager.response = 2;
+                        manager.MoveLever(2);
 
                     else if (primary2DAxisValue.x < -0.7)
-                        manager.response = 0;
+                        manager.MoveLever(0);
 
 
                     if (primary2DAxisValue.y > 0.7)
-                        manager.response = 1;
+                        manager.MoveLever(1);
                 }
             }
         }      
