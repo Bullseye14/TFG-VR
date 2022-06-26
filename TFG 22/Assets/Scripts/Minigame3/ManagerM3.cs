@@ -8,6 +8,9 @@ public class ManagerM3 : MonoBehaviour
     public bool waiting = false;
     public int response = 1;
 
+    public int answeredQuestions = -1;
+    public int correctQuestions = 0;
+
     public Transform lever;
 
     public Vector3 leverRot;

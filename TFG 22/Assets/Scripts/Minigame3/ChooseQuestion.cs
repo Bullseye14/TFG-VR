@@ -5,17 +5,21 @@ using UnityEngine;
 using System.IO;
 using System.Linq;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class ChooseQuestion : MonoBehaviour
 {
     public TrailMovement movement;
 
+    public ManagerM3 manager;
+
+    public TextMeshPro question;
+
     private List<string> allText;
 
     public List<string> answers;
-
-    public TextMeshPro question;
     public List<TextMeshPro> answersList;
+    public List<GameObject> answersColliders;
 
     private int questionLine;
 
@@ -33,8 +37,13 @@ public class ChooseQuestion : MonoBehaviour
 
     public void GetNewQuestion()
     {
-        if (allText.Count > 1)
+        if (manager.answeredQuestions < 6)
         {
+            manager.answeredQuestions++;
+
+            for (int i = 0; i < answersColliders.Count; i++)
+                answersColliders[i].name = i.ToString();
+
             // Ens diu la línia on està la pregunta escollida random
             questionLine = Random.Range(0, allText.Count) / 4 * 4;
 
@@ -48,6 +57,8 @@ public class ChooseQuestion : MonoBehaviour
 
             // Decidim en quina de les 3 preguntes anirà la resposta correcta
             correctIndex = Random.Range(0, 3);
+
+            answersColliders[correctIndex].name = "Correct Answer";
 
             // Assignem la resposta correcta a una de les tres preguntes
             answersList[correctIndex].text = answers[2];
@@ -64,7 +75,11 @@ public class ChooseQuestion : MonoBehaviour
             answers.Clear();
         }
 
-        else movement.moving = false;
+        else
+        {
+            WorldManager.currentMinigame = 0;
+            SceneManager.LoadScene("MainMenu");
+        }
     }
 
     private void FillQuestions(int firstRandom)

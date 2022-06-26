@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -197,7 +197,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 425861714}
   m_LocalRotation: {x: -0, y: 0.50356793, z: -0, w: 0.8639557}
-  m_LocalPosition: {x: 9.915779, y: 2.0300002, z: 1.5946856}
+  m_LocalPosition: {x: 9.72, y: 2.0300002, z: 3.6}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 466623222}
@@ -1496,7 +1496,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 898121332}
   m_LocalRotation: {x: -0, y: -0.9081663, z: -0, w: 0.41860974}
-  m_LocalPosition: {x: -5.8697205, y: 2.0500002, z: 3.914341}
+  m_LocalPosition: {x: -7.86, y: 2.0500002, z: 4.21}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 1094691423}
@@ -2986,14 +2986,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2071096482}
-  m_LocalRotation: {x: -0.06728383, y: -0.6001989, z: 0.039552163, w: 0.79603386}
-  m_LocalPosition: {x: 2.7, y: 2.23, z: 8.01}
+  m_LocalRotation: {x: -0.07203738, y: -0.7028734, z: 0.030035032, w: 0.70702016}
+  m_LocalPosition: {x: -0.1, y: 2.4, z: 8.27}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 591202605}
   m_Father: {fileID: 1442487498}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: -3.4190001, y: -74.27901, z: 8.279}
+  m_LocalEulerAnglesHint: {x: -3.4190001, y: -89.91, z: 8.279}
 --- !u!65 &2071096484
 BoxCollider:
   m_ObjectHideFlags: 0
