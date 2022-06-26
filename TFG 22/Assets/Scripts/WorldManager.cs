@@ -36,7 +36,7 @@ public class WorldManager : MonoBehaviour
     }
     public void AmplifyGO(GameObject GO)
     {
-        Vector3 amplifyScale = Vector3.one * 4;
+        Vector3 amplifyScale = Vector3.one * 3;
         GO.transform.localScale = amplifyScale;
     }
 

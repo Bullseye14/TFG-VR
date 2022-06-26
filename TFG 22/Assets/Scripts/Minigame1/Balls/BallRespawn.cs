@@ -21,10 +21,10 @@ public class BallRespawn : MonoBehaviour
     {
         if(touchingFloor)
         {
-            if (timerOnFloor >= 5f)
+            if (timerOnFloor >= 3f)
                 RespawnBall();
 
-            else if (timerOnFloor < 5f)
+            else if (timerOnFloor < 3f)
                 timerOnFloor += Time.deltaTime;
         }
     }
