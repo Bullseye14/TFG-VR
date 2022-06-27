@@ -37,7 +37,7 @@ public class TrailMovement : MonoBehaviour
         this.transform.rotation = iniRotation;
         transform.LookAt(new Vector3(target.position.x, transform.position.y, target.position.z));
 
-        farolet.color = Color.cyan;
+        farolet.color = Color.blue;
         faroletGO.GetComponent<MeshRenderer>().material = materials[0];
     }
 
