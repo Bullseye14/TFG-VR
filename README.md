@@ -6,6 +6,10 @@ This is a Final Degree Project done in the CITM (Centre de la Imatge i la Tecnol
 
 This project consists on the design and implementation of a Virtual Reality game to help teachers in secondary school give their classes in a funnier and more interesting way, for students to enjoy learning.
 
+## Videos
+
+Check the [Teaser](https://www.youtube.com/watch?v=KXJ2pS7lUkI) and the [Gameplay](https://www.youtube.com/watch?v=eSgwLp-d5T8) !
+
 ## How to play
 First of all, go to the [releases](https://github.com/Bullseye14/TFG-VR/releases) page and download the latest release. 
 
